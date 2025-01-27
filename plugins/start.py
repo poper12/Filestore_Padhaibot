@@ -8,14 +8,6 @@ from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import add_user, del_user, full_userbase, present_user
 
-madflixofficials = FILE_AUTO_DELETE
-jishudeveloper = madflixofficials
-file_auto_delete = humanize.naturaldelta(jishudeveloper)
-
-
-
-
-
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     id = message.from_user.id
@@ -87,12 +79,12 @@ async def start_command(client: Client, message: Message):
                 
             except:
                 pass
+        if FILE_AUTO_DELETE >0:
 
-
-        k = await client.send_message(chat_id = message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis Video / File Will Be Deleted In {file_auto_delete} (Due To Copyright Issues).\n\n📌 Please Forward This Video / File To Somewhere Else And Start Downloading There.")
+            k = await client.send_message(chat_id = message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis Video / File Will Be Deleted In {file_auto_delete} (Due To Copyright Issues).\n\n📌 Please Forward This Video / File To Somewhere Else And Start Downloading There.")
 
         # Schedule the file deletion
-        asyncio.create_task(delete_files(madflix_msgs, client, k))
+            asyncio.create_task(delete_files(madflix_msgs, client, k))
         
         # for madflix_msg in madflix_msgs: 
             # try:
