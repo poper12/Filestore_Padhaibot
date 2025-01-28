@@ -15,14 +15,14 @@ DB_URL = os.environ.get("DB_URL", "mongodb+srv://renamebot:amrenamebot@cluster0.
 DB_NAME = os.environ.get("DB_NAME", "Cluster0")
 
 
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002290453971"))
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002125056742"))
-FORCE_SUB_CHANNEL2 = int(os.environ.get("FORCE_SUB_CHANNEL2", "-1002449941207"))    #Selling channel 
-FORCE_SUB_CHANNEL3 = int(os.environ.get("FORCE_SUB_CHANNEL3", "-1002178582432"))
-FORCE_SUB_CHANNEL4 = int(os.environ.get("FORCE_SUB_CHANNEL4", "-1002416627674"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002290453971"))   #STUFF CHANNEL
+FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002125056742"))      #MAIN CHANNEL [18]
+FORCE_SUB_CHANNEL2 = int(os.environ.get("FORCE_SUB_CHANNEL2", "-1002489586500"))    #BACKUP CHANNEL
+FORCE_SUB_CHANNEL3 = int(os.environ.get("FORCE_SUB_CHANNEL3", "-1002325795111"))    # PROMO CHANNEL
+FORCE_SUB_CHANNEL4 = int(os.environ.get("FORCE_SUB_CHANNEL4", "-1002449941207"))    #SELLING CHANNEL
 
 
-FILE_AUTO_DELETE = int(os.getenv("FILE_AUTO_DELETE", "99999")) # auto delete in seconds
+FILE_AUTO_DELETE = int(os.getenv("FILE_AUTO_DELETE", "432000")) # auto delete in seconds
 
 
 PORT = os.environ.get("PORT", "8080")
@@ -32,7 +32,7 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 try:
     ADMINS=[6848088376]
-    for x in (os.environ.get("ADMINS", "6848088376 6975428639 5543390445 7607741983 5164955785").split()):
+    for x in (os.environ.get("ADMINS", "6848088376 6975428639 5543390445 7607741983 5164955785 6882412087").split()):
         ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
